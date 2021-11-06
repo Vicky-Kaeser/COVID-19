@@ -15,3 +15,13 @@ INSERT INTO Counties VALUES (18001, 'Adams')
 INSERT INTO Counties VALUES (18003, 'Allen')
 INSERT INTO Counties VALUES (18005, 'Barholomew')
 Go
+
+
+INSERT INTO Cases (YrMo, StateID, CountyID, AgeGroup, CaseType) VALUES 
+('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
+('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
+('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
+('2020-08',18,18001,'18 to 49 years','Probable Case'),
+('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case')
+
+Go
