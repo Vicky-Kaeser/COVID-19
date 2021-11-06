@@ -10,3 +10,6 @@ Go
 
 SELECT * FROM Counties
 Go
+
+SELECT * FROM Cases
+Go
