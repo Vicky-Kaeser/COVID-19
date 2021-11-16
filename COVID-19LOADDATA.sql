@@ -1,27 +1,34 @@
 /**
-Load data for States, Counties, and Cases
-
-
-
+Covid-19-LOADDATA.sql
+Author: Eduviges (Vicky) Kaeser
+Date Created: 11/13/2021
+Description: data for Covid-19 (States, Counties, Cases, Customers, and DataRequests)
 **/
 
-INSERT INTO States VALUES (18, 'IN')
-INSERT INTO States VALUES (21, 'KY')
-INSERT INTO States VALUES (39, 'OH')
-INSERT INTO States VALUES (47, 'TN')
+
+USE [COVID-19];
 GO
 
-INSERT INTO Counties VALUES (18001, 'Adams')
-INSERT INTO Counties VALUES (18003, 'Allen')
-INSERT INTO Counties VALUES (18005, 'Barholomew')
+
+--C:\Users\Vicky\Documents\COVID-19\Casses.csv
+
+BULK INSERT States FROM 'C:\Users\Vicky\Documents\COVID-19\States.csv' WITH ( FIRSTROW = 2, FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', TABLOCK );
+
+
+
+BULK INSERT Counties FROM 'C:\Users\Vicky\Documents\COVID-19\Counties.csv' WITH ( FIRSTROW = 2, FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', TABLOCK );
+
+BULK INSERT Cases2 FROM 'C:\Users\Vicky\Documents\COVID-19\Cases.csv' WITH ( FIRSTROW = 2, FIELDTERMINATOR = ',', ROWTERMINATOR = '\n', TABLOCK ); 
+
+
+INSERT INTO Cases (YrMo, AgeGroup, CaseType, StateID, CountyID) SELECT YrMo, AgeGroup, CaseType, StateID, CountyID FROM Cases2;
+
+INSERT INTO Customers VALUES ( 'Joe')
+INSERT INTO Customers VALUES ( 'Jane')
+INSERT INTO Customers VALUES ( 'Barney')
 Go
 
-
-INSERT INTO Cases (YrMo, StateID, CountyID, AgeGroup, CaseType) VALUES 
-('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
-('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
-('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case'),
-('2020-08',18,18001,'18 to 49 years','Probable Case'),
-('2020-08',18,18001,'18 to 49 years','Laboratory-confirmed case')
-
+INSERT INTO DataRequests VALUES (18001, 1)
+INSERT INTO DataRequests VALUES (18003, 2)
+INSERT INTO DataRequests VALUES (18005, 3)
 Go
