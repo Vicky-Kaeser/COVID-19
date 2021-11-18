@@ -26,15 +26,16 @@ The Stored Procedures within this project assists with maintance by creating, up
 | Add Customer | CreateCustomer @NewCustomer = "CustomerName" |
 | Remove Customer | DeleteCustomer @CustomerID = "CustomerID" |
 | Edit Customer | UpdateCustomerName @CustomerName = "CustomerName", @CustomerID = "CustomerID" |
-| List Cases by selecting a State |@State = "s.StateName" |
+| List Cases by selecting a State |CasesbyState @State = "s.StateName" |
 
 
-## Technical Instructions
+## Technical Instructions 
 
 - Requires MS SQL Server
 - Execute the COVID-19CREATEDBOBJECTS.sql script to create the database objects
 - Execute the COVID-19LOADDATA.sql script to load the data
-- The COVID-19COMMANDS.sql script has example commands you can select (by highlighting then hit Execute) and the Execute stored procedures commands.
+- NOTE: Due to the size of the data it might take up to 15 minutes for the data to load
+- The COVID-19COMMANDS.sql script has example commands you can select from (by highlighting then hit Execute), plus the Execute Stored Procedure commands.
 
 ## Project Requirements
 
